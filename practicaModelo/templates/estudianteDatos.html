@@ -10,7 +10,28 @@
 <body class="container mt-5">
     <div class="alert alert-info display-1 text-center"> Listado de Estudiantes lindos</div>
     {% if lista_estudiante %}
-        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>email</th>
+                    <th>edad</th>
+                    <th>telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in lista_estudiante %}
+                    <tr>
+                        <td>{{ e.id }}</td>
+                        <td>{{ e.nombre }}</td>
+                        <td>{{ e.email }}</td>
+                        <td>{{ e.edad }}</td>
+                        <td>{{ e.telefono }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
     {% else %}
         <div class="text-center alert alert-warning"> No hay estudiantes lindos registrados</div>
     {% endif %}
