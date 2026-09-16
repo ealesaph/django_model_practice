@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from formsApp import views as vw
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', vw.index, name='index')
 ]
