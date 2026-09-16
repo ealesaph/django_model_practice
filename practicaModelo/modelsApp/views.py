@@ -6,4 +6,4 @@ def estudiante_datos(request):
     data={
         'lista_estudiante':lista_estudiante
     }
-    return render(request,'estudianteDatos.html',{})
+    return render(request,'estudianteDatos.html', data)
