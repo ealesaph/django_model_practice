@@ -9,6 +9,10 @@
 </head>
 <body class="container mt-5">
     <div class="alert alert-info display-1 text-center"> Listado de Estudiantes lindos</div>
-    
+    {% if lista_estudiante %}
+        
+    {% else %}
+        <div class="text-center alert alert-warning"> No hay estudiantes lindos registrados</div>
+    {% endif %}
 </body>
 </html>
