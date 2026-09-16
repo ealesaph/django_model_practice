@@ -5,3 +5,4 @@ class EstudianteModels(models.Model):
     nombre=models.CharField(max_length=50)
     email=models.EmailField(max_length=50)
     edad=models.IntegerField()
+    telefono=models.CharField(max_length=12, null=True)
