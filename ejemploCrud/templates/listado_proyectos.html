@@ -28,8 +28,8 @@
                         <td>{{ p.nombre }}</td>
                         <td>{{ p.responsable }}</td>
                         <td>{{ p.prioridad }}</td>
-                        <td><a href="" class="btn btn-success">Modificar</a></td>
-                        <td><a href="" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="/modificar_proyecto/{{ p.id }}" class="btn btn-success">Modificar</a></td>
+                        <td><a href="/eliminar_proyecto/{{ p.id }}" class="btn btn-danger">Eliminar</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

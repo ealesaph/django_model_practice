@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import ProyectoModels as pM
 from .forms import ProyectoForms as pF
 
@@ -22,6 +22,26 @@ def agregar_proyecto(request):
             print('ok')
         return index(request)
     data={
-        'fromulario':formulario
+        'titulo':'Agregar nuevo proyecto',
+        'formulario':formulario
     }
     return render(request, 'agregar_proyecto.html',data)
+
+def eliminar_proyecto(request,id):
+    proyecto=pM.objects.get(id=id)
+    proyecto.delete()
+    return redirect('/listado_proyectos')
+
+def modificar_proyecto(request, id):
+    proyecto=pM.objects.get(id=id)
+    formulario = pF(instance=proyecto)
+    if request.method=='POST':
+        formulario=pF(request.POST, instance=proyecto)
+        if formulario.is_valid():
+            formulario.save()
+        return redirect('/listado_proyectos')
+    data = {
+        'titulo': 'Modificar nuevo proyecto',
+        'formulario': formulario
+    }
+    return render(request, 'agregar_proyecto.html', data)

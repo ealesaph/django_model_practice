@@ -23,4 +23,6 @@ urlpatterns = [
     path('', vw.index, name='index'),
     path('listado_proyectos/', vw.listado_proyectos, name='listado_proyectos'),
     path('agregar_proyecto/',vw.agregar_proyecto, name='agregar_proyecto'),
+    path('eliminar_proyecto/<int:id>',vw.eliminar_proyecto, name='eliminar_proyecto'),
+    path('modificar_proyecto/<int:id>',vw.modificar_proyecto, name='modificar_proyecto'),
 ]
