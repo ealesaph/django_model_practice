@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from crudApp import views as vw
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', vw.index, name='index'),
+    path('listado_proyectos/', vw.listado_proyectos, name='listado_proyectos'),
+
 ]
