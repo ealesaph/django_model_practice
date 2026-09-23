@@ -1,7 +1,7 @@
-from django import forms as fr
+from django import forms
 from .models import ProyectoModels
 
-class ProyectoForms(fr.ModelForm):
+class ProyectoForms(forms.ModelForm):
     class Meta:
         model=ProyectoModels
         fields='__all__'

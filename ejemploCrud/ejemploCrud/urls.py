@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', vw.index, name='index'),
     path('listado_proyectos/', vw.listado_proyectos, name='listado_proyectos'),
-
+    path('agregar_proyecto/',vw.agregar_proyecto, name='agregar_proyecto'),
 ]

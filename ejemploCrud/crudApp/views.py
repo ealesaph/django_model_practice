@@ -12,3 +12,16 @@ def listado_proyectos(request):
         'lista_proyectos':lista_proyectos
     }
     return render(request, 'listado_proyectos.html',data)
+
+def agregar_proyecto(request):
+    formulario=pF()
+    if request.method=='POST':
+        formulario=pF(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            print('ok')
+        return index(request)
+    data={
+        'fromulario':formulario
+    }
+    return render(request, 'agregar_proyecto.html',data)

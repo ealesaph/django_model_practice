@@ -9,6 +9,37 @@
 </head>
 <body class="container mt-5">
     <div class="alert alert-warning display-1 text-center">Listado proyectos guardados</div>
-    <a href="{% url 'index' %}" class="btn btn-danger">Ir al Index</a>
+    {% if lista_proyectos %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Fecha inicio proyecto</td>
+                    <td>Fecha termino proyecto</td>
+                    <td>Nombre del proyecto</td>
+                    <td>Responsable del proyecto</td>
+                    <td>Prioridad del proyecto</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in lista_proyectos %}
+                    <tr>
+                        <td>{{ p.fecha_inicio }}</td>
+                        <td>{{ p.fecha_termino }}</td>
+                        <td>{{ p.nombre }}</td>
+                        <td>{{ p.responsable }}</td>
+                        <td>{{ p.prioridad }}</td>
+                        <td><a href="" class="btn btn-success">Modificar</a></td>
+                        <td><a href="" class="btn btn-danger">Eliminar</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div>
+            <p class="text-center display-4">No hay proyectos registrados</p>
+        </div>
+    {% endif %}
+    <a href="{% url 'index' %}" class="btn btn-warning">Ir al Index</a>
+    <a href="{% url 'agregar_proyecto' %}" class="btn btn-info">Agregar Proyecto</a>
 </body>
 </html>
