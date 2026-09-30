@@ -1,7 +1,12 @@
 from django import forms
-from .models import CalderoModels
+from .models import CalderoPostre , CalderoSandwich
 
-class CalderooForms(forms.ModelForm):
+class CalderoPostreForms(forms.ModelForm):
     class Meta:
-        model = CalderoModels
-        fields='__all__'
+        model = CalderoPostre
+        fields = '__all__'
+        
+class CalderoSandwichForms(forms.ModelForm):
+    class Meta:
+        model = CalderoSandwich
+        fields = '__all__'
