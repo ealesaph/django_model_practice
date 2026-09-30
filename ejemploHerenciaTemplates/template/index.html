@@ -1,0 +1,23 @@
+{% extends './layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+
+    {{ titulo }}
+
+{% endblock %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="{% static 'estilos/estilo_principal.css' %}">
+
+{% endblock %}
+
+{% block contenido %}
+
+    <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum neque, vero, perspiciatis, maiores reprehenderit accusantium libero suscipit sit ratione quisquam quaerat dicta cumque rem aliquid hic obcaecati iusto quas corrupti?
+    </p>
+
+{% endblock %}

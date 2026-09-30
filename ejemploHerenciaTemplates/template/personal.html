@@ -1,0 +1,41 @@
+{% extends './layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+
+    {{ titulo }}
+
+{% endblock %}
+
+
+{% block contenido %}
+    {{ empleados }}
+    <ul>
+        <li>valor 1</li>
+        <li>valor 2</li>
+        <li>valor 3</li>
+    </ul>
+    <hr>
+
+    <h3>
+    <ul>
+        {% for e in empleados %}
+            {% if e == 'Elba Lazo' %}
+                <li style="color: aqua;">{{ e }}</li>
+            {% else %}
+                <li>{{ e }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    </h3>
+    <hr>
+
+    
+    <br>
+    <hr>
+    <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum odio esse perspiciatis fugit consequuntur nemo. Ut dolorem laboriosam assumenda incidunt, architecto quod, aut quisquam dignissimos porro repellendus aliquam sint accusamus.Ipsa quos iste reiciendis dignissimos porro cumque quis, expedita voluptas corrupti cupiditate minus reprehenderit totam debitis molestias earum omnis doloribus. Repellendus cupiditate autem possimus dolore vero quibusdam, quo odit eaque.Sapiente quibusdam doloremque odio provident accusamus cupiditate qui optio harum asperiores temporibus unde reiciendis eveniet quasi, eius facere ipsam eaque et quos ea error veniam? Ut eveniet amet tempore voluptate!Nemo, nisi. Laborum tempore facere accusantium ex, magnam cum dignissimos suscipit necessitatibus consequuntur vero dicta dolores reiciendis molestias voluptates obcaecati explicabo sapiente exercitationem. Qui, autem temporibus expedita culpa consectetur nobis? Inventore, nihil blanditiis. Modi, rerum temporibus laboriosam quos perferendis officiis sed eum quo ut nulla quod ad quaerat. Sed hic cumque pariatur, laborum a quo itaque quod modi. Tenetur, asperiores.
+    </p>
+
+{% endblock %}
