@@ -1,7 +1,7 @@
 {% extends './layout/base.html' %}
 
 
-{% blocktitulo %}
+{% block titulo %}
     {{titulo}}
 {% endblock %}
 
@@ -10,5 +10,6 @@
 {% endblock %}
 
 {% block contenido %}
-
+<div class="alert alert-info display-1 text-center">Index de proyectos</div>
+    <a href="{% url 'listado_proyectos' %}" class="btn btn-danger">Ir a Listado de proyectos</a>
 {% endblock %}

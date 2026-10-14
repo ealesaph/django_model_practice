@@ -1,0 +1,24 @@
+{% extends './layout/base.html' %}
+
+{% block titulo %}
+    {{titulo}}
+{% endblock %}
+
+{% block contenido %}
+<body class="container mt-5">
+    <div class="alert alert-success text-center display-1">
+        {{titulo}}
+    </div>
+    <form action="" method="post">
+        <table class="table">
+            {{ formulario.as_table }}
+            {% csrf_token %}
+            <tr>
+                <td>
+                    <input type="submit" value="Grabar" class="btn btn-success">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{% endblock %}
