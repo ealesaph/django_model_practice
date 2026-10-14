@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from usuarioApp import views as vw
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', vw.index, name='index'),
+    path('insertar/', vw.crear_usuario, name='insertar'),
+    path('usuarios/', vw.vista_usuario, name='consultar'),
+    path('eliminar/<int:id>', vw.eliminar_usuario, name='eliminar'),
+    path('modificar_producto/<int:id>', vw.modificar_usuario, name='modificar'),
+
 ]
