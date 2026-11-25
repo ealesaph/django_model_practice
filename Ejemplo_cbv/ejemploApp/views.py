@@ -39,3 +39,8 @@ class EstudianteDetalle(APIView):
             ser.save()
             return Response(ser.data)
         return Response(ser.errors,status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self,request,pk):
+        estudiante=self.get_object(pk)
+        estudiante.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
