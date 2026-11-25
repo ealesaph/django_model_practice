@@ -19,3 +19,23 @@ class EstudianteLista(APIView):
             ser.save
             return Response(ser.data, status=status.HTTP_201_CREATED)
         return Response(ser.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class EstudianteDetalle(APIView):
+    def get_object(self, pk):
+        try:
+            return Estudiante.objects.get(pk=pk)
+        except:
+            return Http404
+
+    def get(self, request, pk ):
+        estudiante=self.get_object(pk)
+        ser=EstudianteSerializers(estudiante)
+        return Response(ser.data)
+
+    def put(self,request,pk):
+        estudiante=self.get_object(pk)
+        ser=EstudianteSerializers(estudiante,request.data)
+        if ser.is_valid():
+            ser.save()
+            return Response(ser.data)
+        return Response(ser.errors,status=status.HTTP_400_BAD_REQUEST)
