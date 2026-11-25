@@ -6,3 +6,4 @@ class Estudiante(models.Model):
     nombre=models.CharField(max_length=50)
     email=models.EmailField(unique=True)
     promedio=models.DecimalField(max_digits=3,decimal_places=1)
+
